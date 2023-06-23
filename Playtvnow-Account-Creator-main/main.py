@@ -103,10 +103,10 @@ def Sign_up_s1():
     ActionChains(driver).send_keys(Keys.TAB).perform()
     ActionChains(driver).send_keys(Keys.TAB).perform()
     ActionChains(driver).send_keys(Keys.TAB).perform()
-    ActionChains(driver).send_keys("a;{h99vBD-VF").perform()
+    ActionChains(driver).send_keys("a;h99vBD-VF").perform()
 
     # find the email field and enter an email
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "inputNewPassword2"))).send_keys("a;{h99vBD-VF")
+    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "inputNewPassword2"))).send_keys("a;h99vBD-VF")
     
     # click next
     WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "checkout"))).click()
@@ -130,48 +130,10 @@ def Sign_up_s1():
     ActionChains(driver).send_keys(Keys.TAB).perform()
     ActionChains(driver).send_keys(Keys.TAB).perform()
     ActionChains(driver).send_
-        
-    # click next
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "ClientAreaHomePagePanels-Active_Products_Services-0"))).click()
-
-    while True:
-        try: WebDriverWait(driver, 1).until(EC.presence_of_element_located((By.XPATH, "//*[text()[contains(.,'Date of Birth')]]"))); return
-        except: WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//*[text()[contains(.,'Next Step')]]"))).click()
-
-
-def Sign_up_s3():
-    global day, month, year
-    # click the month dropdown
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//*[text()[contains(.,'Month')]]"))).click()
-
-    # select a random month and click it
-    month = random.choice(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"])
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//*[text()[contains(.,'" + month + "')]]"))).click()
-
-    # click the day dropdown
-    day = random.randint(1, 28)
-    ActionChains(driver).send_keys(Keys.TAB).perform()
-    ActionChains(driver).send_keys(day).perform()
-
-
-    # click the year dropdown
-    year = random.randint(1990, 2005)
-    ActionChains(driver).send_keys(Keys.TAB).perform()
-    ActionChains(driver).send_keys(year).perform()
-    
-
-    # get the coordinates of the button with text "Sign Up"
-    button = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//*[text()[contains(.,'Sign Up')]]")))
-    x = button.location['x']
-    y = button.location['y']
-
-    # click coordinates of the button
-    ActionChains(driver).move_by_offset(x, y).click().perform()
-    
 
 def Store_info():
     with open("z_infolist.txt", "a") as f:
-        f.write(f"{username}:{password}:{month}/{day}/{year}")
+        f.write(f"{username + "@gmail.com"}:{a;h99vBD-VF}")
 
 
 start()
